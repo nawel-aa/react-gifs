@@ -10,7 +10,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      gifId: "1VVK8MkhTTZIEELV9H",
+      gifId: "",
       gifList: []
     };
   }
@@ -30,14 +30,16 @@ class App extends Component {
   }
 
   render() {
+    const { gifId, gifList } = this.state;
+
     return (
       <div>
         <div className="left-scene">
           <SearchBox search={this.search} />
-          <Gif id={this.state.gifId} />
+          <Gif id={gifId} />
         </div>
         <div className="right-scene">
-          <GifList gifList={this.state.gifList} selectGif={this.selectGif} />
+          <GifList gifList={gifList} selectGif={this.selectGif} />
         </div>
       </div>
     );

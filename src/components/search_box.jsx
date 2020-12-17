@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SearchBox extends Component {
-  render() {
-    return (
-      <input type="text" className="form-search" onChange={this.props.search} />
-    );
-  }
-}
+const SearchBox = (props) => {
+  const { search } = props;
+
+  return (
+    <input type="text" className="form-search" onChange={search} />
+  );
+};
 
 export default SearchBox;
